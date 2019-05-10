@@ -1,0 +1,64 @@
+<section class="sample-app-content">
+  <h3>Form Example:</h3>
+  <!--<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <p>
+      <label>First Name:</label>
+      <input type="text" formControlName="firstName">
+    </p>
+    <p>
+      <label>Password:</label>
+      <input type="password" formControlName="password">
+    </p>
+    <p>
+      <button type="submit" [disabled]="!form.valid">Submit</button>
+    </p>
+  </form>-->
+
+  <form [formGroup]="DetailsForm" (ngSubmit)="onFormSubmit()">
+
+    Email:
+    <input formControlName="email">
+    <!--<span *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.required">
+    Email is required.
+  </span>-->
+    <span *ngFor="let validation of validation_messages.email">
+      <span *ngIf="(email.dirty || email.touched) && DetailsForm.get('email').hasError(validation.type) ">
+        {{validation.message}}
+      </span>
+    </span>
+    <br />
+    <br />
+    Mobile:
+    <input formControlName="mobile" minlength=10 maxlength=10>
+    <!--<span *ngIf="(mobile.dirty || mobile.touched) && mobile.invalid && mobile.errors.required">
+    Mobile is required.
+  </span>
+  <span *ngIf="(mobile.dirty || mobile.touched) && mobile.hasError(validation.type) ">
+    Value has to be a number.
+  </span>-->
+    <span *ngFor="let mobilevalidation of validation_messages.mobile">
+      <span *ngIf="(mobile.dirty || mobile.touched) && DetailsForm.get('mobile').hasError(mobilevalidation.type) ">
+        {{mobilevalidation.message}}
+      </span>
+    </span>
+    <br />
+    <br />
+
+    <label class="datematlabel">Date Range Picker</label>
+    <div>
+      <input type="text"
+             placeholder=""
+             class="form-control datemat"
+             bsDaterangepicker #drp="bsDaterangepicker" placement="bottom" [container]="section" [(bsValue)]="datePicker" [bsConfig]="{dateInputFormat: 'YYYY-MM-DD'}">
+    </div>
+    <div>
+      <input type="text"
+             placeholder="Datepicker"
+             class="form-control"
+             bsDatepicker placement="bottom">
+    </div>
+    <button type="submit" [disabled]="!DetailsForm.valid">Save</button>
+    <button type="reset" (click)="revert()">Revert</button>
+
+  </form>
+</section>

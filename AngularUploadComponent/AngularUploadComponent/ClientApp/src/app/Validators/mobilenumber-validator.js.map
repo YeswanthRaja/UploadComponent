@@ -1,0 +1,1 @@
+{"version":3,"file":"mobilenumber-validator.js","sourceRoot":"","sources":["mobilenumber-validator.ts"],"names":[],"mappings":";;AAEA,SAAgB,oBAAoB,CAAC,OAAwB;IAC3D,IAAM,KAAK,GAAG,OAAO,CAAC,IAAI,CAAC,OAAO,CAAC,KAAK,CAAC,CAAC;IAC1C,OAAO,KAAK,CAAC,CAAC,CAAC,IAAI,CAAC,CAAC,CAAC,EAAE,aAAa,EAAE,EAAE,KAAK,EAAE,KAAK,EAAE,KAAK,EAAE,OAAO,CAAC,KAAK,EAAE,EAAE,CAAC;AAElF,CAAC;AAJD,oDAIC"}
